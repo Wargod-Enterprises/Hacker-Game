@@ -30,7 +30,7 @@ Narrative premise (linear, scripted, NOT written yet): three acts. Defender (you
 Intro (New Game / Continue / Quit) -> Hub (Shopkeeper / Manage Equipment / Enter Matrix / Quit) -> Sector Select -> Coordinate List -> scan a coordinate -> Engage (hostile only) -> Combat -> back to Coordinate List.
 
 - Back buttons return to the previously visited screen (a navigation history stack), NOT a fixed parent. Implemented with screenHistory / goBack().
-- Hub Quit returns to Intro; Intro Quit exits to a completely blank screen. Both ask for confirmation (overlay with confirm/cancel).
+- Hub Quit returns to Intro; Intro Quit leaves the game and goes to the Wargod Enterprises home page (https://wargod-enterprises.github.io/); it replaced the old blank exit screen. Both ask for confirmation (overlay with confirm/cancel).
 - Continue is shown but disabled (no saves exist yet).
 - Sector Select shows a per-sector "cleared" tag. Coordinates are text like 12.04.11, a fixed finite number per sector, start unknown, and are revealed by scanning. Scan result is empty / node / hostile. A hostile can be engaged or skipped. A sector is cleared when every coordinate is revealed and every hostile is defeated.
 - Hub: Shopkeeper = shop + repair + story delivery on one screen (all "talking to a character"). Manage Equipment = loadout + unit management. Both are placeholders.
@@ -103,7 +103,7 @@ Passive, always on, tiered against the enemy's Firewall tier. Baseline tier reve
 
 ## 8. What is finished and working
 
-- Full navigation shell: Intro, Hub, Shopkeeper/Equipment placeholders, Sector Select, Coordinate List, Combat, history-based Back, confirm overlays, blank exit screen.
+- Full navigation shell: Intro, Hub, Shopkeeper/Equipment placeholders, Sector Select, Coordinate List, Combat, history-based Back, confirm overlays, Intro Quit returns to the studio home page.
 - Procedural sectors (3 sectors x 6 coordinates, 40% empty / 30% node / 30% hostile), scan-to-reveal, cleared tracking.
 - Complete combat loop vs. a simple AI: Exploit -> breach -> Payload, Jam/Disable, Decoy/Harden/ECCM/Evict, enemy Jam and Trojan, Sustained ticks, Trojan fuses and exposure, decision-window freeze, first-move-instant, win/lose handling that feeds back into exploration.
 

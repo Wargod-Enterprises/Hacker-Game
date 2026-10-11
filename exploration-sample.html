@@ -159,9 +159,6 @@
     </div>
   </div>
 
-  <!-- CLOSED -->
-  <div id="screenClosed" class="hidden"></div>
-
   <!-- HUB -->
   <div id="screenHub" class="hidden">
     <div class="panel" style="text-align: center; padding: 30px 20px;">
@@ -289,7 +286,7 @@
   // =========================================================
   // SCREEN SWITCHING
   // =========================================================
-  const SCREENS = ['screenIntro', 'screenClosed', 'screenHub', 'screenShopkeeper', 'screenEquipment', 'screenSectorSelect', 'screenCoordList', 'screenCombat'];
+  const SCREENS = ['screenIntro', 'screenHub', 'screenShopkeeper', 'screenEquipment', 'screenSectorSelect', 'screenCoordList', 'screenCombat'];
   let currentScreen = null;
   let screenHistory = [];
 
@@ -319,7 +316,7 @@
 
   document.getElementById('btnStart').addEventListener('click', () => showScreen('screenHub'));
   document.getElementById('btnIntroQuit').addEventListener('click', () => {
-    showConfirm('Exit the game entirely?', () => showScreen('screenClosed'));
+    showConfirm('Exit the game entirely?', () => { window.location.href = 'https://wargod-enterprises.github.io/'; });
   });
 
   document.getElementById('btnGoShopkeeper').addEventListener('click', () => showScreen('screenShopkeeper'));
